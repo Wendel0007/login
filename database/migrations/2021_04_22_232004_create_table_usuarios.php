@@ -18,6 +18,10 @@ class CreateTableUsuarios extends Migration
             $table->string('nome');
             $table->string('email');
             $table->string('senha');
+            $table->string('endereco');
+            $table->string('cidade');
+            $table->string('estado');
+            $table->string('cep');
             $table->timestamps();
         });
     }
