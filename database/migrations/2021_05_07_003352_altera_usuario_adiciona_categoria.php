@@ -27,7 +27,7 @@ class AlteraUsuarioAdicionaCategoria extends Migration
     {
         Schema::table('usuarios', function(Blueprint $table){
             $table->dropForeign(['id_categoria']);
-            $table->dropColumn(['id_categoria']);
+            $table->dropColumn('id_categoria');
         });
     }
 }

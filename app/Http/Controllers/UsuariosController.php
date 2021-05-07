@@ -43,6 +43,7 @@ class UsuariosController extends Controller
 		$cep = $req->input('cep');
 		$estado = $req->input('estado');
 
+
 		$u = new Usuario();
 		$u->nome = $nome;
 		$u->email = $email;
@@ -51,6 +52,7 @@ class UsuariosController extends Controller
 		$u->cidade = $cidade;
 		$u->cep = $cep;
 		$u->estado = $estado;
+		$u->id_categoria = 1;
 		
 
 		$u->save();
