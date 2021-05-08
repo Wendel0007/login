@@ -18,7 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [UsuariosController::class, 'exibeLogin']);
+Route::get('/login', [UsuariosController::class, 'exibeLogin'])->
+name('login');
 
 Route::post('/tenta_login', [UsuariosController::class, 'tentaLogin']);
 
@@ -39,4 +40,7 @@ name('usuario_alterar');
 
 Route::get('/usuario/excluir/{id}', [UsuariosController::class, 'excluir'])->
 name('usuario_excluir');
+
+Route::get('/usuario/logout', [UsuariosController::class, 'logout'])->
+name('logout');
 

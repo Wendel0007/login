@@ -49,7 +49,7 @@
                     </form>
                 </div>
             </div>
-            <p class="text-center text-white mt-3">Já tem um acesso? - <a href="">Clique aqui</a></p>
+            <p class="text-center text-white mt-3">Já tem um acesso? - <a href="{{ route('login') }}">Clique aqui</a></p>
             <div class="small text-center text-muted mt-5">Copyright © 2021 - Onefloat Developer</div>
         </div>
     </div>

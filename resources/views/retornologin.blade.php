@@ -13,6 +13,7 @@
                         <th>CIDADE</th>
                         <th>ESTADO</th>
                         <th>CEP</th>
+                        <th>CATEGORIA</th>
                         <th>OPERACOES</th>
                     </tr>
                     @foreach ($usuarios as $u)
@@ -24,6 +25,7 @@
                             <td>{{ $u->cidade }}</td>
                             <td>{{ $u->estado }}</td>
                             <td>{{ $u->cep }}</td>
+                            <td>{{ $u->categoria->nome }}</td>
                             <td>
                                 <a href="{{ route('usuario_editar', ['id' => $u->id]) }}" class="btn btn-warning">Alt</a>
                                 <a href="#" onclick="excluir({{ $u->id }})" class="btn btn-danger">Exc</a>
@@ -36,7 +38,10 @@
                             <strong>{{ $resposta }}</strong>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                        <a href="{{ route('usuario_novo') }}" class="btn btn-success">Adicionar Novo</a>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{ route('usuario_novo') }}" class="btn btn-success">Adicionar Novo</a>
+                            <a href="{{ route('logout') }}" class="btn btn-light">Logout</a>
+                        </div>
                         @if (session('mensagem'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 {{ session('mensagem') }}
@@ -79,7 +84,7 @@
                         </form>
                     </div>
                 </div>
-                <p class="text-center text-white mt-3">Esqueceu sua senha? - <a href="">Clique aqui</a></p>
+                <p class="text-center text-white mt-3">Esqueceu sua senha? - <a href="{{ route('usuario_novo') }}">Clique aqui</a></p>
                 <div class="small text-center text-muted mt-5">Copyright © 2021 - Onefloat Developer</div>
             </div>
         </div>

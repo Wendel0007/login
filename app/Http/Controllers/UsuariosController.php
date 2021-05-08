@@ -98,8 +98,8 @@ class UsuariosController extends Controller
 	}
 
 	function logout(){
-		
-		return redirect()->route('usuario_lista');
+		session()->forget('login');
+		return redirect()->route('login');
 	}
 }
 
